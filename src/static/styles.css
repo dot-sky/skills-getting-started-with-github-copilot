@@ -142,3 +142,43 @@ footer {
   padding: 20px;
   color: #666;
 }
+
+/* Participants section inside activity cards */
+.participants-section {
+  margin-top: 12px;
+}
+
+.participants-title {
+  font-weight: 600;
+  color: #37474f;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* Keep the list bulleted but style items as soft chips */
+.participants-list {
+  list-style: disc inside;
+  display: block;
+  padding-left: 18px;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.participants-list li {
+  list-style: disc;
+  background: #eef3ff;
+  color: #0b3a8c;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(10, 35, 102, 0.08);
+}
+
+/* Small meta lines inside cards */
+.activity-meta {
+  color: #555;
+  font-size: 0.92rem;
+  margin-top: 6px;
+}
