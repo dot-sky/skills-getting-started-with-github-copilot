@@ -155,25 +155,51 @@ footer {
   font-size: 0.95rem;
 }
 
-/* Keep the list bulleted but style items as soft chips */
+/* Use a custom bullet via ::before so chips can be inline while still showing bullets */
 .participants-list {
-  list-style: disc inside;
-  display: block;
-  padding-left: 18px;
+  list-style: none; /* remove native bullets */
+  padding-left: 0;
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  display: block;
 }
 
 .participants-list li {
-  list-style: disc;
+  position: relative;
+  display: inline-block; /* chip layout */
+  margin-right: 8px;
+  margin-bottom: 6px;
   background: #eef3ff;
   color: #0b3a8c;
   padding: 6px 10px;
   border-radius: 999px;
   font-size: 0.9rem;
   border: 1px solid rgba(10, 35, 102, 0.08);
+  /* custom bullet */
+  padding-left: 18px;
+}
+
+.participants-list li::before {
+  content: "•";
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0b3a8c;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+/* small note style when there are no participants (no bullet, plain text) */
+.participants-list li.no-participant {
+  background: transparent;
+  border: none;
+  color: #666;
+  padding: 0;
+  border-radius: 0;
+}
+
+.participants-list li.no-participant::before {
+  content: "";
 }
 
 /* Small meta lines inside cards */
